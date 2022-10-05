@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { BsFillMoonStarsFill } from "react-icons/bs"
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs"
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
@@ -35,10 +35,17 @@ export default function Home() {
             <h1 className='text-xl font-burtons dark:text-white'>NPMYoan</h1>
             <ul className='flex items-center'>
               <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className='cursor-pointer text-2xl dark:text-white'
-                />
+                {darkMode ? (
+                  <BsFillSunFill
+                    onClick={() => setDarkMode(!darkMode)}
+                    className='cursor-pointer text-2xl dark:text-white'
+                  />
+                ) : (
+                  <BsFillMoonStarsFill
+                    onClick={() => setDarkMode(!darkMode)}
+                    className='cursor-pointer text-2xl dark:text-white'
+                  />
+                )}
               </li>
               <li>
                 <a
